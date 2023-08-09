@@ -1,5 +1,18 @@
 function cubeNumber(number) {
-    return Math.pow(number , 3);
+    if(typeof number != "number")
+        return "Please Enter a number";
+    else
+        return Math.pow(number , 3);
+}
+function matchFinder(string1, string2) {
+    if(typeof string1 !='string' || typeof string2 !='string'){
+        return "Invalid Input! Please enter string."
+    }
+    else if(string1.includes(string2))
+        return true;
+    else
+        return false;
+    
 }
 
 function sortMaker(arr){
@@ -34,11 +47,7 @@ function findAddress(obj) {
     else
         return obj.street+","+obj.house+","+obj.society;
 }
-// console.log(findAddress({
-//     street: 10,
-//     house: "15A",
-//     society: "Earth Perfect"
-// }));
+
 function canPay(changeArray, totalDue) {
     if(changeArray.length == 0)
         return "Invalid input!";
@@ -50,14 +59,4 @@ function canPay(changeArray, totalDue) {
     return true;
     else if(sum < totalDue)
     return false;
-}
-function matchFinder(string1, string2) {
-    if(typeof string1 !='string' || typeof string2 !='string'){
-        return "Invalid Input! Please enter string."
-    }
-    else if(string1.includes(string2))
-        return true;
-    else
-        return false;
-    
 }
